@@ -11,7 +11,6 @@ const uploadOnCloudinary = async (localFilePath) => {
 
     try {
 
-        console.log("cloudinary key", process.env.CLOUDINARY_API_KEY)
         if (!localFilePath) return null
         // upload the file on cloudinary
 
@@ -20,7 +19,9 @@ const uploadOnCloudinary = async (localFilePath) => {
         })
 
         // file has been uploaded successfully
-        console.log("file is uploaded on cloudinary ", response.url)
+        // console.log("file is uploaded on cloudinary ", response.url)
+
+        console.log(response)
 
         // delete temp file after successful upload 
         if (fs.existsSync(localFilePath)) fs.unlinkSync(localFilePath)
